@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Results</title>
+</head>
+<body>
+    <h1>Results</h1>
+    <h2>Most Guessed Country: {{ most_common[0] if most_common else "None" }}</h2>
+    <h3>With {{ most_common[1] if most_common else "0" }} votes.</h3>
+    <h2>All Guesses:</h2>
+    <ul>
+        {% for country, count in guesses.items() %}
+            <li>{{ country }}: {{ count }} votes</li>
+        {% endfor %}
+    </ul>
+    <a href="/">Back to Guessing</a>
+</body>
+</html>
